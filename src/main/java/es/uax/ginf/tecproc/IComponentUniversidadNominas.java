@@ -1,5 +1,8 @@
 package es.uax.ginf.tecproc;
 
 public interface IComponentUniversidadNominas {
-    public double sumarNominas();
+    double sumarNominas();
+    String getNombre();
+    double getComplemento();
+    void setComplemento(double complemento);
 }

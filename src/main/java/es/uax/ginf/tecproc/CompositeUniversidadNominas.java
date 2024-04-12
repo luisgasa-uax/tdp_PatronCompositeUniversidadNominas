@@ -14,7 +14,6 @@ public class CompositeUniversidadNominas implements IComponentUniversidadNominas
         this.complemento = complemento;
     }
 
-
     public void addHijo(IComponentUniversidadNominas hijo) {
         hijos.add(hijo);
     }
@@ -23,17 +22,32 @@ public class CompositeUniversidadNominas implements IComponentUniversidadNominas
         hijos.remove(hijo);
     }
 
-    public List<IComponentUniversidadNominas> getHijos(){
+    public List<IComponentUniversidadNominas> getHijos() {
         return this.hijos;
     }
-
 
     @Override
     public double sumarNominas() {
         double totalNominas = 0;
-        for (IComponentUniversidadNominas hijo: hijos ) {
+        for (IComponentUniversidadNominas hijo : hijos) {
             totalNominas += hijo.sumarNominas();
         }
         return totalNominas * (1 + complemento);
     }
+
+    @Override
+    public String getNombre() {
+        return nombre;
+    }
+
+    @Override
+    public double getComplemento() {
+        return 0;
+    }
+
+    @Override
+    public void setComplemento(double complemento) {
+        this.complemento = complemento;
+    }
+
 }

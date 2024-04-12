@@ -6,6 +6,7 @@ public class ProfesorHojaUniversidadNominas implements IComponentUniversidadNomi
     private final String np;
     private double precioHora;
     private int horasTrabajo;
+    private double complemento;
 
     public ProfesorHojaUniversidadNominas(String nombre, String np, double precioHora, int horasTrabajo) {
         this.nombre = nombre;
@@ -14,24 +15,44 @@ public class ProfesorHojaUniversidadNominas implements IComponentUniversidadNomi
         this.horasTrabajo = horasTrabajo;
     }
 
-    public double getPrecioHora() {
-        return precioHora;
+
+    @Override
+    public double sumarNominas() {
+        return this.horasTrabajo * this.precioHora;
     }
 
-    public void setPrecioHora(double precioHora) {
-        this.precioHora = precioHora;
+    public String getNombre() {
+        return nombre;
+    }
+
+    @Override
+    public double getComplemento() {
+        return complemento;
+    }
+
+    @Override
+    public void setComplemento(double complemento) {
+        this.complemento = complemento;
+    }
+
+
+    public String getNp() {
+        return np;
+    }
+
+    public double getPrecioHora() {
+        return precioHora;
     }
 
     public int getHorasTrabajo() {
         return horasTrabajo;
     }
 
-    public void setHorasTrabajo(int horasTrabajo) {
-        this.horasTrabajo = horasTrabajo;
+    public void setPrecioHora(double precioHora) {
+        this.precioHora = precioHora;
     }
 
-    @Override
-    public double sumarNominas() {
-        return this.horasTrabajo * this.precioHora;
+    public void setHorasTrabajo(int horasTrabajo) {
+        this.horasTrabajo = horasTrabajo;
     }
 }
